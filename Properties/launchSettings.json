@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "XOuranos.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "getinfo"
+    }
+  }
+}
