@@ -28,7 +28,7 @@ try
     {
         var builder = new StringBuilder();
         builder.AppendLine("Usage:");
-        builder.AppendLine(" dotnet run <XOuranos.Cli/XOuranos.Cli.dll> [options] <command> [arguments]");
+        builder.AppendLine(" dotnet run <Marscoin..Cli/Marscoin.Cli.dll> [options] <command> [arguments]");
         builder.AppendLine();
         builder.AppendLine("Command line arguments:");
         builder.AppendLine();
@@ -45,9 +45,9 @@ try
         builder.AppendLine();
         builder.AppendLine("Examples:");
         builder.AppendLine();
-        builder.AppendLine("dotnet run xouranos -testnet GET Wallet/history WalletName=testwallet - Lists all the historical transactions of the wallet called 'testwallet' on the stratis test network.");
-        builder.AppendLine("dotnet run xouranos -rpcuser=admin -rpcpassword=123456 -rpcconnect=127.0.0.3 -rpcport=26174 getinfo - Displays general information about the Stratis node on the 127.0.0.3:26174, authenticating with the RPC specified user.");
-        builder.AppendLine("dotnet run xouranos -rpcuser=admin -rpcpassword=123456 getbalance - Displays the current balance of the opened wallet on the 127.0.0.1:8332 node, authenticating with the RPC specified user.");
+        builder.AppendLine("dotnet run Marscoin -testnet GET Wallet/history WalletName=testwallet - Lists all the historical transactions of the wallet called 'testwallet' on the stratis test network.");
+        builder.AppendLine("dotnet run Marscoin -rpcuser=admin -rpcpassword=123456 -rpcconnect=127.0.0.3 -rpcport=26174 getinfo - Displays general information about the Stratis node on the 127.0.0.3:26174, authenticating with the RPC specified user.");
+        builder.AppendLine("dotnet run Marscoin -rpcuser=admin -rpcpassword=123456 getbalance - Displays the current balance of the opened wallet on the 127.0.0.1:8332 node, authenticating with the RPC specified user.");
         Console.WriteLine(builder);
         Console.ReadKey();
         return;
