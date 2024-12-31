@@ -2,7 +2,7 @@
   "profiles": {
     "Marscoin.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "getinfo"
+      "commandLineArgs": "-rpcuser=admin -rpcpassword=123456 -rpcconnect=127.0.0.1 -rpcport=332 createwallet walletname password"
     }
   }
 }

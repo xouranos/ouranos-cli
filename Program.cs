@@ -59,9 +59,11 @@ try
     // Process RPC call.
     try
     {
-        var nodeEndPoint = "127.0.0.1:43333";
-        var RpcUser = "admin";
-        var RpcPassword = "123456";
+        var ip = optionList.First(a => a.StartsWith("-rpcconnect=")).Replace("-rpcconnect=", "");
+        var port= optionList.First(a => a.StartsWith("-rpcport=")).Replace("-rpcport=", "");
+        var nodeEndPoint = ip + ":" + port;
+        var RpcUser = optionList.First(a => a.StartsWith("-rpcuser=")).Replace("-rpcuser=", "");
+        var RpcPassword = optionList.First(a => a.StartsWith("-rpcpassword=")).Replace("-rpcpassword=", "");
         // Find the binding to 127.0.0.1 or the first available. The logic in RPC settings ensures there will be at least 1.
         var rpcUri = new Uri($"http://{nodeEndPoint}");
 
@@ -73,7 +75,8 @@ try
         http.DefaultRequestHeaders.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(RpcUser + ":" + RpcPassword)));
         // Execute the RPC command
         Console.WriteLine($"Sending RPC command '{command} {string.Join(" ", commandArgList)}' to '{rpcUri}'.");
-        var response = await http.PostAsync(rpcUri, new StringContent("{\"method\":\""+ command + "\",\"params\":["+ string.Join(",", commandArgList) + "]}", Encoding.UTF8, "application/json"));
+        var postString = "{\"method\":\"" + command + "\",\"params\":[\"" + string.Join("\",\"", commandArgList) + "\"]}";
+        var response = await http.PostAsync(rpcUri, new StringContent(postString, Encoding.UTF8, "application/json"));
         var result = await response.Content.ReadAsStringAsync();
         // Return the result as a string to the console.
         Console.WriteLine(result);
