@@ -39,7 +39,7 @@ try
         builder.AppendLine("Options:");
         builder.AppendLine("-help                              This help message");
         builder.AppendLine("-rpcconnect=<ip>                   Send commands to node running on <ip> (default: 127.0.0.1)");
-        builder.AppendLine("-rpcport=<port>                    Connect to JSON-RPC on <port> (default for Stratis: 26174 or default for Bitcoin: 8332)");
+        builder.AppendLine("-rpcport=<port>                    Connect to JSON-RPC on <port> (default for Marscoin: 33334 or default for Bitcoin: 8332)");
         builder.AppendLine("-rpcuser=<user>                    Username for JSON-RPC connections");
         builder.AppendLine("-rpcpassword=<pw>                  Password for JSON-RPC connections");
         builder.AppendLine();
